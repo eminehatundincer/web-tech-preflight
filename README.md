@@ -17,7 +17,7 @@ Bu sprintte yalnızca HTML kullanılarak 5 sayfalık uygulama iskeleti oluşturu
 
 ### Canlı URL
 
-Vercel: (deploy sonrası buraya yazılacak)
+Vercel: [web-tech-preflight.vercel.app](https://web-tech-preflight.vercel.app/)
 
 ### Geliştirici
 
