@@ -1,0 +1,105 @@
+:root {
+  --no: 2416501080;
+  --ton: mod(var(--no), 360);
+  --renk-ana: hsl(var(--ton) 65% 38%);
+  --renk-zemin: hsl(var(--ton) 30% 97%);
+  --font: Arial, sans-serif;
+  --bosluk-m: 1rem;
+  --kose: 8px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: var(--font);
+  background: var(--renk-zemin);
+  color: #1a1a1a;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Sadece ana içerik ortada, dar sütun */
+main, footer {
+  max-width: 960px;
+  margin-inline: auto;
+  padding-inline: var(--bosluk-m);
+}
+
+/* Tam genişlik kırmızı header bandı */
+header {
+  background: var(--renk-ana);
+  color: #fff;
+  padding-block: var(--bosluk-m);
+}
+/* Header içeriği ana sütunla aynı hizada dursun */
+header h1,
+header nav {
+  max-width: 960px;
+  margin-inline: auto;
+  padding-inline: var(--bosluk-m);
+}
+header h1 { margin: 0 auto .5rem; color: #fff; }
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--bosluk-m);
+}
+nav a { color: #fff; text-decoration: none; font-weight: bold; }
+nav a:hover { text-decoration: underline; }
+
+main { padding-block: var(--bosluk-m); }
+footer { padding-block: var(--bosluk-m); color: #555; font-size: .9rem; }
+
+/* Kart ızgarası: telefonda tek sütun, geniş ekranda çok sütun */
+section:has(article) {
+  display: grid;
+  gap: var(--bosluk-m);
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+article {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: var(--kose);
+  padding: var(--bosluk-m);
+}
+article h3 { margin-top: 0; color: var(--renk-ana); }
+article a { color: var(--renk-ana); font-weight: bold; text-decoration: none; }
+article a:hover { text-decoration: underline; }
+
+/* Ayın Programı tablosu (gerçek veri tablosu) */
+table { width: 100%; border-collapse: collapse; margin-top: var(--bosluk-m); }
+caption { font-weight: bold; margin-bottom: .5rem; text-align: left; }
+th, td { border: 1px solid #ccc; padding: .5rem; text-align: left; }
+
+/* Detay sayfası: afiş + künye */
+figure { margin: 0; }
+figure img { max-width: 100%; height: auto; border-radius: var(--kose); }
+dl { display: grid; grid-template-columns: max-content 1fr; gap: .25rem var(--bosluk-m); }
+dt { font-weight: bold; }
+dd { margin: 0; }
+
+/* Formlar */
+form { display: grid; gap: var(--bosluk-m); max-width: 500px; }
+label { display: block; font-weight: bold; margin-bottom: .25rem; }  /* label üstte */
+input, select, textarea {
+  width: 100%;
+  padding: .5rem;
+  border: 1px solid #aaa;
+  border-radius: var(--kose);
+  font-family: inherit;
+  font-size: 1rem;
+}
+input:user:invalid,
+select:user:invalid,
+textarea:user:invalid { border-color: crimson; }   /* boş zorunlu alan kırmızı */
+button {
+  background: var(--renk-ana);
+  color: #fff;
+  border: none;
+  padding: .75rem;
+  border-radius: var(--kose);
+  font-size: 1rem;
+  cursor: pointer;
+}
+button:hover { filter: brightness(1.1); }
