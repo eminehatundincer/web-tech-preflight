@@ -19,46 +19,61 @@
     </header>
 
     <main>
-        <form>
+       <p id="form-aciklama">Alanlar mevcut etkinliğin bilgileriyle dolu gelir. Bu sprintte form veri güncellemez.</p>
+
+<form id="etkinlik-formu" data-mode="guncelle" novalidate>
     <p>
-        <label for="etkinlikAdi">Etkinlik Adı</label><br>
-        <input type="text" id="etkinlikAdi" name="etkinlikAdi" value="Kariyer Günleri 2026" required>
+        <label for="ad">Etkinlik Adı *</label><br>
+        <input type="text" id="ad" name="ad" required>
+        <span id="ad-hata" class="hata"></span>
     </p>
 
     <p>
-        <label for="kategori">Kategori</label><br>
+        <label for="kategori">Kategori *</label><br>
         <select id="kategori" name="kategori" required>
-            <option value="Seminer" selected>Seminer</option>
-            <option value="Atolye">Atölye</option>
-            <option value="Konferans">Konferans</option>
-            <option value="Sosyal">Sosyal</option>
+            <option value="">Seçiniz</option>
+            <option value="Seminer">Seminer</option>
+            <option value="Atölye">Atölye</option>
+            <option value="Söyleşi">Söyleşi</option>
         </select>
+        <span id="kategori-hata" class="hata"></span>
     </p>
 
     <p>
-        <label for="tarih">Tarih</label><br>
-        <input type="date" id="tarih" name="tarih" value="2026-10-12" required>
+        <label for="tarih">Tarih *</label><br>
+        <input type="date" id="tarih" name="tarih" required>
+        <span id="tarih-hata" class="hata"></span>
     </p>
 
     <p>
-        <label for="saat">Saat</label><br>
-        <input type="time" id="saat" name="saat" value="14:00" required>
+        <label for="saat">Saat *</label><br>
+        <input type="time" id="saat" name="saat" required>
+        <span id="saat-hata" class="hata"></span>
     </p>
 
     <p>
-        <label for="yer">Yer</label><br>
-        <input type="text" id="yer" name="yer" value="A Blok Konferans Salonu" required>
+        <label for="yer">Yer *</label><br>
+        <input type="text" id="yer" name="yer" required>
+        <span id="yer-hata" class="hata"></span>
+    </p>
+
+    <p>
+        <label for="kontenjan">Kontenjan</label><br>
+        <input type="number" id="kontenjan" name="kontenjan" min="1" max="1000">
+        <span id="kontenjan-hata" class="hata"></span>
     </p>
 
     <p>
         <label for="aciklama">Açıklama</label><br>
-        <textarea id="aciklama" name="aciklama" rows="4" cols="40" required>Sektör profesyonelleriyle kariyer fırsatlarını keşfedin.</textarea>
+        <textarea id="aciklama" name="aciklama" rows="4" cols="40"></textarea>
     </p>
 
     <p>
         <button type="submit">Güncelle</button>
     </p>
 </form>
+
+<div id="form-mesaj"></div>
     </main>
 
     <footer>
