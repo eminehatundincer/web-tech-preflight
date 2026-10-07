@@ -138,3 +138,33 @@ button:hover { filter: brightness(1.1); }
   margin: .25rem .25rem .25rem 0;
 }
 .buton:hover { opacity: .9; }
+/* Alan altındaki hata metni */
+.hata {
+  display: block;
+  color: #c62828;
+  font-size: .85rem;
+  margin-top: .25rem;
+}
+
+/* Hatalı alan: kırmızı kenar */
+[aria-invalid="true"] {
+  border: 2px solid #c62828;
+  background: #fff5f5;
+}
+
+/* Başarı kutusu: yeşil */
+.basari-kutusu {
+  border: 1px solid #2e7d32;
+  background: #f1f8f1;
+  color: #2e7d32;
+  border-radius: var(--kose);
+  padding: var(--bosluk-m);
+  margin-top: var(--bosluk-m);
+}
+.basari-kutusu pre {
+  color: #222;
+  white-space: pre-wrap;
+  font-size: .85rem;
+}
+
+#form-mesaj.hata-kutusu { margin-top: var(--bosluk-m); }
