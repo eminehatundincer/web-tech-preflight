@@ -33,4 +33,13 @@ function render(dizi) {
   list.innerHTML = dizi.map(createCard).join("");
 }
 
-render(events);
+// Ana sayfada data-limit="2" var → tarihe göre sırala, ilk 2'yi göster
+// Etkinlikler sayfasında yok → hepsini göster
+if (list.dataset.limit) {
+  const yaklasan = [...events]
+    .sort((a, b) => a.date.localeCompare(b.date))
+    .slice(0, Number(list.dataset.limit));
+  render(yaklasan);
+} else {
+  render(events);
+}
