@@ -20,7 +20,20 @@
 
     <main>
         <h2>Tüm Etkinlikler</h2>
-       <section id="etkinlik-listesi" class="etkinlik-listesi"></section>
+       <form id="filtre-formu" class="filtre">
+    <div>
+        <label for="arama">Etkinlik ara</label>
+        <input type="search" id="arama" name="arama" placeholder="Örn. atölye, kariyer">
+    </div>
+    <div>
+        <label for="kategori-filtre">Kategori</label>
+        <select id="kategori-filtre" name="kategori">
+            <option value="">Tümü</option>
+        </select>
+    </div>
+</form>
+<p id="sonuc"></p>
+ <section id="etkinlik-listesi" class="etkinlik-listesi"></section>
         <h2>Ayın Programı</h2>
         <table>
             <caption>Ayın Programı</caption>

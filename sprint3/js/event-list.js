@@ -43,3 +43,48 @@ if (list.dataset.limit) {
 } else {
   render(events);
 }
+// ---------- Adım 7: Arama + kategori filtresi ----------
+const filtreFormu = document.querySelector("#filtre-formu");
+const arama = document.querySelector("#arama");
+const kategoriFiltre = document.querySelector("#kategori-filtre");
+const sonucSatiri = document.querySelector("#sonuc");
+
+// Filtre formu sadece etkinlikler.html'de var; ana sayfada bu blok çalışmaz
+if (filtreFormu) {
+  // 1) Kategori seçeneklerini veriden üret (her kategori bir kez)
+  const kategoriler = [...new Set(events.map((e) => e.category))];
+  kategoriler.forEach((kategori) => {
+    kategoriFiltre.innerHTML += `<option value="${kategori}">${kategori}</option>`;
+  });
+
+  // 2) Filtreleme fonksiyonu
+  function filtrele() {
+    const aranan = arama.value.trim().toLocaleLowerCase("tr-TR");
+    const secilenKategori = kategoriFiltre.value;
+
+    const sonuc = events.filter((e) => {
+      const metin = `${e.title} ${e.category} ${e.description}`.toLocaleLowerCase("tr-TR");
+      const metinUyuyor = metin.includes(aranan);
+      const kategoriUyuyor = secilenKategori === "" || e.category === secilenKategori;
+      return metinUyuyor && kategoriUyuyor;
+    });
+
+    render(sonuc);
+
+    if (sonuc.length === 0) {
+      sonucSatiri.textContent = "Aramanıza uygun etkinlik bulunamadı.";
+    } else {
+      sonucSatiri.textContent = `${sonuc.length} etkinlik listeleniyor.`;
+    }
+  }
+
+  // 3) Yazdıkça ve kategori değişince filtrele
+  arama.addEventListener("input", filtrele);
+  kategoriFiltre.addEventListener("change", filtrele);
+
+  // 4) Enter'a basınca sayfa yenilenmesin
+  filtreFormu.addEventListener("submit", (e) => e.preventDefault());
+
+  // 5) Sayfa ilk açıldığında "6 etkinlik listeleniyor." yazsın
+  filtrele();
+}

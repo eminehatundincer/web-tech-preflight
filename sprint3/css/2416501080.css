@@ -103,3 +103,38 @@ button {
   cursor: pointer;
 }
 button:hover { filter: brightness(1.1); }
+ <section id="etkinlik-listesi" class="etkinlik-listesi"></section>
+ /* Detay sayfası: geniş ekranda afiş solda, künye sağda */
+.detay-ust { display: grid; gap: var(--bosluk-m); }
+@media (min-width: 700px) {
+  .detay-ust { grid-template-columns: 1fr 1fr; align-items: start; }
+}
+.kunye {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: var(--kose);
+  padding: var(--bosluk-m);
+}
+.kunye h2 { margin-top: 0; }
+
+/* Kırmızı hata kutusu */
+.hata-kutusu {
+  background: #fff5f5;
+  border: 1px solid #c62828;
+  color: #c62828;
+  border-radius: var(--kose);
+  padding: var(--bosluk-m);
+}
+
+/* Link görünümlü butonlar */
+.buton {
+  display: inline-block;
+  background: var(--renk-ana);
+  color: #fff;
+  padding: .5rem 1rem;
+  border-radius: var(--kose);
+  text-decoration: none;
+  font-weight: bold;
+  margin: .25rem .25rem .25rem 0;
+}
+.buton:hover { opacity: .9; }
