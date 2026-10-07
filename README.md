@@ -1,3 +1,5 @@
+Canlı adres (Sprint 3): https://web-tech-preflight-sprint3.vercel.app/
+
 # Kampüs Etkinlikleri
 
 Üniversite kampüsünde düzenlenen etkinliklerin listelendiği, detaylarının görüntülendiği ve yeni etkinlik eklenebildiği bir web uygulamasıdır.
@@ -34,6 +36,20 @@ Sprint 1'deki HTML yapısı bozulmadan CSS eklenmiştir. Renk ve font öğrenci 
 
 Vercel: [web-tech-preflight-sprint2.vercel.app](https://web-tech-preflight-sprint2.vercel.app/)
 
-### Geliştirici
+## Sprint 3 - JavaScript ve DOM
 
-Emine Hatun Dinçer · 2416501080 · 2026
+Etkinlikler artık HTML'e elle yazılmıyor; tek bir veri dosyasından (`js/data.js`) JavaScript ile üretiliyor. localStorage, framework ve jQuery kullanılmadı.
+
+### Modüller
+
+- **js/data.js** - 6 etkinliğin bulunduğu dizi (tek veri kaynağı)
+- **js/event-list.js** - Etkinlikler sayfasında tüm kartlar, ana sayfada tarihi en yakın 2 etkinlik (`data-limit`); arama ve kategori filtresi
+- **js/event-detail.js** - Detay sayfası adresteki `?id=` ile doğru etkinliği açar; geçersiz veya eksik id'de hata kutusu gösterir
+- **js/event-form.js** - Ekleme ve güncelleme formu: alan doğrulama, hata ve başarı mesajları (veri kaydedilmez)
+
+### Yapılan değişiklikler
+
+- Elle yazılmış kartlar silindi, yerine boş container bırakıldı
+- Menüden Detay ve Güncelle linkleri kaldırıldı; güncelleme sayfasına detaydaki "Bu etkinliği güncelle" butonuyla gidiliyor
+- Arama Türkçe karakterlere duyarlı (`toLocaleLowerCase("tr-TR")`), kategoriler veriden üretiliyor
+- Form tarayıcı
