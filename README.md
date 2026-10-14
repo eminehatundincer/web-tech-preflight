@@ -1,4 +1,4 @@
-Canlı adres (Sprint 3): https://web-tech-preflight-sprint3.vercel.app/
+Canlı adres (Sprint 4): VERCEL_ADRESI_BURAYA
 
 # Kampüs Etkinlikleri
 
@@ -53,3 +53,25 @@ Etkinlikler artık HTML'e elle yazılmıyor; tek bir veri dosyasından (`js/data
 - Menüden Detay ve Güncelle linkleri kaldırıldı; güncelleme sayfasına detaydaki "Bu etkinliği güncelle" butonuyla gidiliyor
 - Arama Türkçe karakterlere duyarlı (`toLocaleLowerCase("tr-TR")`), kategoriler veriden üretiliyor
 - Form tarayıcı
+
+
+## Sprint 4 - Vite, TypeScript ve React
+
+Site `frontend` klasöründe Vite React-TS projesine taşındı. Veri tipli, filtre fonksiyonları saf; 5 sayfa tek `App.tsx` içinde, sayfa geçişi ve arama state ile çalışıyor. React Router bu sprintte yok.
+
+### Dosyalar
+
+- **package.json** - Proje adı, komutlar (dev, build) ve paket listesi
+- **package-lock.json** - Yüklenen paketlerin tam sürümleri
+- **node_modules/** - İndirilen paketler; GitHub'a gitmez
+- **tsconfig\*.json** - TypeScript ayarları
+- **vite.config.ts** - Vite ayarları ve React eklentisi
+- **index.html** - Tek HTML dosyası; içinde boş `div#root` var
+- **src/main.tsx** - React'i başlatır, App'i root'a çizer
+- **src/App.tsx** - Uygulamanın ana bileşeni; 5 sayfanın hepsi burada
+- **src/App.css** - Sprint 3'teki CSS
+- **src/index.css** - Tüm sayfaya genel stil; bu sprintte boş
+- **src/types/campus-event.ts** - Etkinlik tipi (`CampusEvent`) ve kategori tipi
+- **src/data/events.ts** - Tipli 6 etkinlik kaydı
+- **src/utils/filter-events.ts** - Arama, kategori filtresi ve id ile bulma için saf fonksiyonlar
+- **public/** - Olduğu gibi kopyalanan dosyalar (afiş)
