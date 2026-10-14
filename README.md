@@ -1,4 +1,4 @@
-Canlı adres (Sprint 4): VERCEL_ADRESI_BURAYA
+Canlı adres (Sprint 4): https://web-tech-preflight-3bgt.vercel.app/
 
 # Kampüs Etkinlikleri
 
