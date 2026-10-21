@@ -25,25 +25,30 @@ main, footer {
   padding-inline: var(--bosluk-m);
 }
 
-/* Tam genişlik kırmızı header bandı */
+/* Tam genişlik header bandı: başlık + alt yazı */
 header {
   background: var(--renk-ana);
   color: #fff;
-  padding-block: var(--bosluk-m);
+  padding-top: var(--bosluk-m);
 }
 /* Header içeriği ana sütunla aynı hizada dursun */
 header h1,
-header nav {
+header p {
   max-width: 960px;
   margin-inline: auto;
   padding-inline: var(--bosluk-m);
 }
 header h1 { margin: 0 auto .5rem; color: #fff; }
+header p { margin: 0 auto .5rem; }
 
+/* Menü header'ın altında ama aynı bantta, aynı hizada */
 nav {
   display: flex;
   flex-wrap: wrap;
   gap: var(--bosluk-m);
+  background: var(--renk-ana);
+  padding-bottom: var(--bosluk-m);
+  padding-inline: max(var(--bosluk-m), calc((100% - 960px) / 2 + var(--bosluk-m)));
 }
 nav a { color: #fff; text-decoration: none; font-weight: bold; }
 nav a:hover { text-decoration: underline; }
