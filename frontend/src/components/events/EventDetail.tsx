@@ -21,7 +21,7 @@ function EventDetail({ event, onBack, onEdit }: EventDetailProps) {
           <h2>Etkinlik Künyesi</h2>
           <dl>
             <dt>Tarih</dt>
-            <dd><time dateTime={`${event.date}T${event.time}`}>{formatDate(event)}, {event.time}</time></dd>
+            <dd><time dateTime={`${event.date}T${event.time}`}>{formatDate(event.date)}, {event.time}</time></dd>
             <dt>Yer</dt>
             <dd>{event.location}</dd>
             <dt>Kategori</dt>

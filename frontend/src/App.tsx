@@ -71,14 +71,6 @@ function App() {
       <main>
         {page === "home" && (
           <>
-            <section>
-              <h2>Hoş Geldiniz</h2>
-              <p>
-                Kampüs Etkinlikleri uygulaması, üniversitemizde düzenlenen
-                seminer, atölye ve konferans gibi etkinlikleri takip etmenizi sağlar.
-              </p>
-            </section>
-
             <h2>Yaklaşan 2 Etkinlik</h2>
             <EventList events={upcoming} onShowDetail={(id) => go("detail", id)} />
             <p><a href="#" onClick={(e) => { e.preventDefault(); go("events"); }}>Tüm etkinlikleri gör →</a></p>
@@ -101,33 +93,6 @@ function App() {
               onShowDetail={(id) => go("detail", id)}
               emptyText="Aramanıza uygun etkinlik bulunamadı."
             />
-
-            <h2>Ayın Programı</h2>
-            <table>
-              <caption>Ayın Programı</caption>
-              <tbody>
-                <tr>
-                  <th>Tarih</th>
-                  <th>Etkinlik</th>
-                  <th>Yer</th>
-                </tr>
-                <tr>
-                  <td><time dateTime="2026-10-12">12 Ekim</time></td>
-                  <td>Kariyer Günleri</td>
-                  <td>A Blok</td>
-                </tr>
-                <tr>
-                  <td><time dateTime="2026-10-20">20 Ekim</time></td>
-                  <td>Robotik Atölyesi</td>
-                  <td>Lab 2</td>
-                </tr>
-                <tr>
-                  <td><time dateTime="2026-10-27">27 Ekim</time></td>
-                  <td>Siber Güvenlik</td>
-                  <td>B Blok</td>
-                </tr>
-              </tbody>
-            </table>
           </>
         )}
 

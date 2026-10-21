@@ -11,7 +11,7 @@ function EventCard({ event, onShowDetail }: EventCardProps) {
     <article>
       <h3>{event.title}</h3>
       <p><strong>{event.category}</strong></p>
-      <p>Tarih: <time dateTime={`${event.date}T${event.time}`}>{formatDate(event)}, {event.time}</time></p>
+      <p>Tarih: <time dateTime={`${event.date}T${event.time}`}>{formatDate(event.date)}, {event.time}</time></p>
       <p>Yer: {event.location}</p>
       <p>Kontenjan: {event.capacity} kişi</p>
       <p>{event.description}</p>
