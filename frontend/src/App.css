@@ -30,6 +30,7 @@ header {
   background: var(--renk-ana);
   color: #fff;
   padding-top: var(--bosluk-m);
+  display: flow-root; /* alt boşluk header'ın dışına taşmasın (beyaz çizgi olmasın) */
 }
 /* Header içeriği ana sütunla aynı hizada dursun */
 header h1,
