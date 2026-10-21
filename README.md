@@ -1,3 +1,5 @@
+Canlı adres (Sprint 5): https://web-tech-preflight-6xz2.vercel.app/
+
 Canlı adres (Sprint 4): https://web-tech-preflight-3bgt.vercel.app/
 
 # Kampüs Etkinlikleri
@@ -75,3 +77,30 @@ Site `frontend` klasöründe Vite React-TS projesine taşındı. Veri tipli, fil
 - **src/data/events.ts** - Tipli 6 etkinlik kaydı
 - **src/utils/filter-events.ts** - Arama, kategori filtresi ve id ile bulma için saf fonksiyonlar
 - **public/** - Olduğu gibi kopyalanan dosyalar (afiş)
+
+
+## Sprint 5 - React Bileşenleri ve Props
+
+Tek büyük `App.tsx` parçalara bölündü. Her parça kendi dosyasında bir bileşen; veriyi props ile alıyor, olayları callback ile App'e bildiriyor. State App'te kalıyor.
+
+### Bileşenler
+
+- **src/components/layout/Header.tsx** - Sayfa başlığı (`title`) ve isteğe bağlı alt yazı (`text`)
+- **src/components/layout/Navigation.tsx** - Menü; açık sayfa (`current`), tıklanınca `onNavigate`
+- **src/components/layout/Footer.tsx** - Alt bilgi; props yok
+- **src/components/events/EventCard.tsx** - Tek etkinlik kartı; `event`, `onShowDetail`
+- **src/components/events/EventList.tsx** - Etkinlik dizisinden kartlar; boşsa `emptyText` mesajı
+- **src/components/events/EventFilter.tsx** - Arama ve kategori kutuları; değerler ve değişiklik callback'leri App'ten
+- **src/components/events/EventDetail.tsx** - Etkinlik detayı; `event`, `onBack`, `onEdit`
+- **src/components/forms/EventForm.tsx** - Ekle ve Güncelle formu; `onSubmit`
+- **src/types/page.ts** - Sayfa adı tipi (`PageName`)
+- **src/utils/format-date.ts** - Tarihi "12 Ekim 2026" biçimine çeviren fonksiyon
+
+### Yapılan değişiklikler
+
+- `App.tsx` yaklaşık 300 satırdan 124 satıra indi; sadece import'lar, state'ler, hesaplanan değerler, `go()` ve bileşenler kaldı
+- Ana sayfa ve Etkinlikler sayfası aynı `EventList` bileşenini kullanıyor; `key` olarak etkinlik `id`'si veriliyor
+- Ana sayfa ve Etkinlikler başlığına alt yazı eklendi
+- "Hoş Geldiniz" bölümü ve "Ayın Programı" tablosu kaldırıldı
+- Menü header'ın altında ayrı bileşen; CSS ile aynı renk bandında gösteriliyor
+- Renkler Sprint 2'deki gibi öğrenci numarasından (`2416501080`) üretiliyor
