@@ -18,7 +18,6 @@ function ForgotPasswordPage() {
 
   return (
     <>
-      <h2 className="bolum-baslik">Şifremi Unuttum</h2>
       <p>Kayıtlı e-posta adresinizi yazın, şifre yenileme bağlantısı gönderelim.</p>
 
       {sent && <p className="mesaj mesaj-basari">

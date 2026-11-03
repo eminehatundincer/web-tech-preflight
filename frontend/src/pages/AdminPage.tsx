@@ -13,7 +13,6 @@ function AdminPage() {
 
   return (
     <>
-      <h2 className="bolum-baslik">Etkinlik Yönetimi</h2>
       <Link className="buton" to="/admin/new">+ Yeni etkinlik</Link>
 
       {events.length === 0 ? (

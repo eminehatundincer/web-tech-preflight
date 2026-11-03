@@ -31,7 +31,6 @@ function RegisterPage() {
 
   return (
     <>
-      <h2 className="bolum-baslik">Kayıt Ol</h2>
       {sent && <p className="mesaj mesaj-basari">Gerçek kayıt Sprint 10'da.</p>}
 
       <form className="form" noValidate onSubmit={handleSubmit}>

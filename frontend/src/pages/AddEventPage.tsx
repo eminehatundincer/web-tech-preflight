@@ -19,7 +19,6 @@ function AddEventPage() {
 
   return (
     <>
-      <h2 className="bolum-baslik">Etkinlik Ekle</h2>
       <EventForm
         initialData={emptyForm}
         submitText="Kaydet"

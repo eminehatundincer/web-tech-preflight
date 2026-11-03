@@ -13,7 +13,6 @@ function EditEventPage() {
 
   return (
     <>
-      <h2 className="bolum-baslik">Etkinlik Güncelle</h2>
       <EventForm
         // Etkinlikte kontenjan sayı, formda metin
         initialData={{ ...event, capacity: String(event.capacity) }}

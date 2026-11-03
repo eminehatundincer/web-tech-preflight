@@ -20,7 +20,6 @@ function LoginPage() {
 
   return (
     <>
-      <h2 className="bolum-baslik">Giriş Yap</h2>
       {sent && <p className="mesaj mesaj-basari">Gerçek giriş Sprint 10'da.</p>}
 
       <form className="form" noValidate onSubmit={handleSubmit}>

@@ -13,7 +13,6 @@ function EventDetailPage() {
 
   return (
     <>
-      <h2 className="bolum-baslik">{event.title}</h2>
       <EventDetail event={event} />
     </>
   );
