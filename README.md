@@ -1,4 +1,4 @@
-Canlı adres (Sprint 6 + Vize): VERCEL_ADRESI_BURAYA
+Canlı adres (Sprint 6 + Vize): https://eminehatundincer-frontend.vercel.app/
 
 Canlı adres (Sprint 5): https://web-tech-preflight-6xz2.vercel.app/
 
@@ -114,7 +114,7 @@ Tek sayfalık uygulama gerçek adreslere kavuştu: liste, detay, yönetim paneli
 
 ### Canlı Vercel adresi
 
-VERCEL_ADRESI_BURAYA
+https://eminehatundincer-frontend.vercel.app/
 
 ### Kurulum
 
