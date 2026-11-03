@@ -1,13 +1,13 @@
+import { Link } from "react-router-dom";
 import type { CampusEvent } from "../../types/campus-event";
 import { formatDate } from "../../utils/format-date";
 
 interface EventDetailProps {
   event: CampusEvent;
-  onBack: () => void;
-  onEdit: (id: string) => void;
 }
 
-function EventDetail({ event, onBack, onEdit }: EventDetailProps) {
+// Sadece çizer: useParams yok, useEvents yok
+function EventDetail({ event }: EventDetailProps) {
   return (
     <article className="detay">
       <div className="detay-ust">
@@ -36,8 +36,8 @@ function EventDetail({ event, onBack, onEdit }: EventDetailProps) {
       <p>{event.description}</p>
 
       <p>
-        <a className="buton" href="#" onClick={(e) => { e.preventDefault(); onBack(); }}>← Listeye dön</a>
-        <a className="buton" href="#" onClick={(e) => { e.preventDefault(); onEdit(event.id); }}>Bu etkinliği güncelle</a>
+        <Link className="buton" to="/events">← Listeye dön</Link>
+        <Link className="buton" to={`/admin/${event.id}/edit`}>Bu etkinliği güncelle</Link>
       </p>
     </article>
   );

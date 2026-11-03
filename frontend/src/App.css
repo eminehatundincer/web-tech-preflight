@@ -5,6 +5,8 @@
   --renk-zemin: hsl(var(--ton) 30% 97%);
   --font: Arial, sans-serif;
   --bosluk-m: 1rem;
+  --bosluk-s: .5rem;
+  --renk-hata: #c62828;
   --kose: 8px;
 }
 
@@ -144,7 +146,7 @@ button:hover { filter: brightness(1.1); }
 }
 .buton:hover { opacity: .9; }
 /* Alan altındaki hata metni */
-.hata {
+.hata-metni {
   display: block;
   color: #c62828;
   font-size: .85rem;
@@ -158,7 +160,8 @@ button:hover { filter: brightness(1.1); }
 }
 
 /* Başarı kutusu: yeşil */
-.basari-kutusu {
+.basari-kutusu,
+.mesaj-basari {
   border: 1px solid #2e7d32;
   background: #f1f8f1;
   color: #2e7d32;
@@ -175,3 +178,20 @@ button:hover { filter: brightness(1.1); }
 #form-mesaj.hata-kutusu { margin-top: var(--bosluk-m); }
 /* Aktif menü linki: beyaz kutu (aria-current) */
 nav a[aria-current="page"] { background: #fff; color: var(--renk-ana); padding: 0 .5rem; border-radius: var(--kose); }
+
+/* Yönetim tablosu: masaüstünde tablo, telefonda kart */
+.tablo { width: 100%; border-collapse: collapse; }
+.tablo th { background: var(--renk-ana); color: #fff; }
+.islemler { display: flex; gap: var(--bosluk-s); }
+.buton-sil { background: var(--renk-hata); }
+
+@media (max-width: 699px) {
+  .tablo thead { display: none; }
+  .tablo tr { display: block; border: 1px solid #ddd;
+    border-radius: var(--kose); }
+  .tablo td { display: block; }
+  .tablo td.islemler { display: flex; }
+  .tablo td[data-baslik]::before {
+    content: attr(data-baslik) ": ";
+    font-weight: 700; }
+}

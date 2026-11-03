@@ -1,3 +1,5 @@
+Canlı adres (Sprint 6 + Vize): VERCEL_ADRESI_BURAYA
+
 Canlı adres (Sprint 5): https://web-tech-preflight-6xz2.vercel.app/
 
 Canlı adres (Sprint 4): https://web-tech-preflight-3bgt.vercel.app/
@@ -104,3 +106,35 @@ Tek büyük `App.tsx` parçalara bölündü. Her parça kendi dosyasında bir bi
 - "Hoş Geldiniz" bölümü ve "Ayın Programı" tablosu kaldırıldı
 - Menü header'ın altında ayrı bileşen; CSS ile aynı renk bandında gösteriliyor
 - Renkler Sprint 2'deki gibi öğrenci numarasından (`2416501080`) üretiliyor
+
+
+## Sprint 6 + Vize - Router, Context ve Yönetim
+
+Tek sayfalık uygulama gerçek adreslere kavuştu: liste, detay, yönetim paneli, giriş ve kayıt sayfaları.
+
+### Canlı Vercel adresi
+
+VERCEL_ADRESI_BURAYA
+
+### Kurulum
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+### Route listesi
+
+| Adres | Sayfa |
+|---|---|
+| `/` | HomePage |
+| `/events` | EventsPage |
+| `/events/:id` | EventDetailPage |
+| `/login` | LoginPage |
+| `/register` | RegisterPage |
+| `/forgot-password` | ForgotPasswordPage |
+| `/admin` | AdminPage |
+| `/admin/new` | AddEventPage |
+| `/admin/:id/edit` | EditEventPage |
+| `*` | NotFoundPage |
