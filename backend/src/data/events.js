@@ -42,7 +42,7 @@ export const events = [
   },
   {
     id: "event-5",
-    title: "Yapay Zeka GÜnleri: Enerji Tasarrufu ve Geri Dönüşüm",
+    title: "Yapay Zeka Günleri: Enerji Tasarrufu ve Geri Dönüşüm",
     category: "Seminer",
     capacity: 150,
     date: "2026-12-01",
