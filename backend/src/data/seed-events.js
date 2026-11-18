@@ -1,7 +1,6 @@
-// Bellek içi veri: sunucu yeniden başlayınca POST ile eklenenler kaybolur
-export const events = [
+// npm run seed ile veritabanına girer; id alanı yok, MongoDB _id verir
+export const seedEvents = [
   {
-    id: "event-1",
     title: "Mezun Buluşması 2026",
     category: "Seminer",
     capacity: 120,
@@ -11,7 +10,6 @@ export const events = [
     description: "Farklı sektörlerde çalışan mezunlarla iş hayatı üzerine söyleşi.",
   },
   {
-    id: "event-2",
     title: "Ahşap Maket Atölyesi",
     category: "Atölye",
     capacity: 20,
@@ -21,7 +19,6 @@ export const events = [
     description: "Lazer kesimle küçük bir köprü maketi tasarlayıp birleştirme.",
   },
   {
-    id: "event-3",
     title: "Veri Gizliliği Sohbetleri",
     category: "Söyleşi",
     capacity: 50,
@@ -31,7 +28,6 @@ export const events = [
     description: "Kişisel verilerin korunması üzerine bir hukukçu ve bir yazılımcıyla sohbet.",
   },
   {
-    id: "event-4",
     title: "Mobil Fotoğrafçılık Atölyesi",
     category: "Atölye",
     capacity: 30,
@@ -41,7 +37,6 @@ export const events = [
     description: "Telefon kamerasıyla ışık, kadraj ve düzenleme teknikleri.",
   },
   {
-    id: "event-5",
     title: "Yapay Zeka Günleri: Enerji Tasarrufu ve Geri Dönüşüm",
     category: "Seminer",
     capacity: 150,
@@ -51,7 +46,6 @@ export const events = [
     description: "Yapay zekanın enerji tasarrufu ve geri dönüşüm projelerine etkisi.",
   },
   {
-    id: "event-6",
     title: "Kadın Girişimciler Söyleşisi",
     category: "Söyleşi",
     capacity: 80,
