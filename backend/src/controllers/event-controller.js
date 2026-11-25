@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 import { Event } from "../models/event-model.js";
+import { todayStart } from "../utils/date.js";
 
 function notFound(res) {
   return res.status(404)
@@ -8,12 +9,30 @@ function notFound(res) {
 
 const KORUNAN_ALANLAR = ["_id", "createdAt", "updatedAt", "__v"];
 
-// GET /events (?category=Atölye isteğe bağlı)
+// GET /events (?search= & ?category= isteğe bağlı)
 export async function getEvents(req, res, next) {
   try {
-    const filter = req.query.category
-      ? { category: req.query.category } : {};
+    const { category, search } = req.query;
+    const filter = {};
+    if (category) filter.category = category;
+    if (search) {
+      // ( * ? gibi işaretler aramayı bozmasın
+      const guvenli = search.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      filter.title = { $regex: guvenli, $options: "i" };
+    }
     const events = await Event.find(filter).sort({ date: 1 });
+    res.json(events);
+  } catch (err) {
+    next(err);
+  }
+}
+
+// GET /events/upcoming
+export async function getUpcomingEvents(req, res, next) {
+  try {
+    const events = await Event
+      .find({ date: { $gte: todayStart() } }) // utils/date.js
+      .sort({ date: 1, time: 1 });
     res.json(events);
   } catch (err) {
     next(err);
