@@ -26,11 +26,16 @@ npm run dev
 
 | Method | Endpoint | Amaç | Başarılı | Hata | Durum |
 |---|---|---|---|---|---|
-| GET | /events | Listeyi getir | 200 | — | Hazır |
-| GET | /events/:id | Tek etkinlik (`:id` = MongoDB `_id`) | 200 | 404 | Hazır |
-| POST | /events | Yeni etkinlik | 201 | 400 | Hazır |
-| PATCH | /events/:id | Güncelle | 200 | 400, 404 | Sprint 9 |
-| DELETE | /events/:id | Sil | 204 | 404 | Sprint 9 |
+| GET | /health | Sunucu ayakta mı | 200 | — | Çalışıyor |
+| GET | /events | Listeyi getir | 200 | — | Çalışıyor |
+| GET | /events?search=&category= | Başlıkta ara, kategoriye göre filtrele | 200 | — | Çalışıyor |
+| GET | /events/upcoming | Bugün ve sonrası, tarihe göre sıralı | 200 | — | Çalışıyor |
+| GET | /events/:id | Tek etkinlik (`:id` = MongoDB `_id`) | 200 | 404 | Çalışıyor |
+| POST | /events | Yeni etkinlik | 201 | 400 | Çalışıyor |
+| PATCH | /events/:id | Sadece gönderilen alanları güncelle | 200 · güncel kayıt | 400, 404 | Çalışıyor |
+| DELETE | /events/:id | Sil | 204 · gövde yok | 404 | Çalışıyor |
+
+Tarih her yerde `GG-AA-YYYY` biçimindedir: `"15-10-2026"`. Geçersiz ya da olmayan id her yerde 404 döner.
 
 **Status code'lar:** 200 tamam · 201 oluşturuldu · 204 içerik yok · 400 eksik/yanlış veri · 404 bulunamadı · 500 sunucu hatası
 
